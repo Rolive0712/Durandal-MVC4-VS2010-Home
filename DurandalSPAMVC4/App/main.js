@@ -26,9 +26,9 @@ function boot(app, viewLocator, system, router, logger) {
 
     app.configurePlugins({
         router: true,
-        dialog: true,
-        widget: true,
-        observable: true
+        dialog: true, //added
+        widget: true, //added
+        observable: true //added
     });
 
     app.start().then(function () {
