@@ -14,6 +14,7 @@ require.config({
 // libs and then register them with require as follows: 
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
+define('amplify', amplify);
 
 define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'plugins/router', 'services/logger'], boot);
 
@@ -35,22 +36,14 @@ function boot(app, viewLocator, system, router, logger) {
         toastr.options.positionClass = 'toast-bottom-right';
         toastr.options.backgroundpositionClass = 'toast-bottom-right';
 
-        router.handleInvalidRoute = function (route, params) {
-            logger.logError('No Route Found', route, 'main', true);
-        };
         // When finding a viewmodel module, replace the viewmodel string 
         // with view to find it partner view.
         // [viewmodel]s/sessions --> [view]s/sessions.html
         // Defaults to viewmodels/views/views. 
         // Otherwise you can pass paths for modules, views, partials
-
-        //router.useConvention();
         viewLocator.useConvention();
-
-        // Adapt to touch devices
-        //app.adaptToDevice();
 
         //Show the app by setting the root view model for our application.
         app.setRoot('viewmodels/shell', 'entrance');
     });
-};
+}
