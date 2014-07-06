@@ -35,7 +35,7 @@ define(function (require) {
 
     vm.successCallback = function (data) {
         if (amplify.store("NorthwindOrders") === undefined)
-            amplify.store("NorthwindOrders", data, { expires: 60000 });
+            amplify.store("NorthwindOrders", data, { expires: 60000 }); // cache data in local storage for 1 min (60000 ms)
         vm.orders = data;
         vm.isLoading(false);
         vm.isAttachedToView(true);
