@@ -1,29 +1,28 @@
 /// <reference path="../../Scripts/_references.js" />
 
-define(['durandal/system',
-        'services/logger'], function (system, logger) {
+define(function () {
 
-            function getOrders() {
+    function getOrders() {
 
-                var param = { viewname: "northwind", orderid: 1 };
-                //return $.getJSON("/Northwind/GetOrders", { viewname: "northwind", orderid: 1 }, function (result) {
-                //});
+        var param = { viewname: "northwind", orderid: 1 };
+        //return $.getJSON("/Northwind/GetOrders", { viewname: "northwind", orderid: 1 }, function (result) {
+        //});
 
-                return $.ajax({
-                    url: "/Northwind/GetOrders",
-                    type: "POST",
-                    cache: false,
-                    data: JSON.stringify(param),
-                    async: true,
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8"
+        return $.ajax({
+            url: "/Northwind/GetOrders",
+            type: "POST",
+            cache: false,
+            data: JSON.stringify(param),
+            async: true,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8"
 
-                });
-            }
-
-            var datacontext = {
-                getOrders: getOrders
-            }
-
-            return datacontext;
         });
+    }
+
+    var datacontext = {
+        getOrders: getOrders
+    };
+
+    return datacontext;
+});
