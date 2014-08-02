@@ -11,7 +11,7 @@ namespace MVCDurandalWeyland
             AddDefaultIgnorePatterns(bundles.IgnoreList);
 
             bundles.Add(
-              new ScriptBundle("~/scripts/vendor")
+              new ScriptBundle("~/scripts/jsextlibs")
                 .Include("~/scripts/jquery-{version}.js")
                 .Include("~/scripts/knockout-{version}.debug.js")
                 .Include("~/scripts/toastr.js")
@@ -19,8 +19,7 @@ namespace MVCDurandalWeyland
                 .Include("~/scripts/breeze.debug.js")
                 .Include("~/scripts/bootstrap.js")
                 .Include("~/scripts/moment.js")
-                .Include("~/scripts/amplify.js")// added
-                .Include("~/scripts/amplify.request.deferred.js") //added
+                .Include("~/scripts/amplify.*")// added
                 
               );
 
