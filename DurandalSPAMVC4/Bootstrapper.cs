@@ -1,8 +1,9 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
+using DapperORMDataAccess;
 
-namespace DurandalSPAMVC4
+namespace MVCDurandalWeyland
 {
   public static class Bootstrapper
   {
@@ -30,7 +31,7 @@ namespace DurandalSPAMVC4
 
     public static void RegisterTypes(IUnityContainer container)
     {
-        //container.
+        container.RegisterType<INorthWindRepository, NorthwindRepository>();
     }
   }
 }
